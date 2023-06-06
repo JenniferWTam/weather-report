@@ -1,3 +1,25 @@
+#Partner Agreements
+With your pair, come up with a “plan of action” for how you want to work as a pair.
+- If possible, collaborate closely with others.
+- Aim to collaborate during coworking sessions. If we "get behind," play by ear on when to work together again.
+
+Access needs
+- No working after 8! Rest time.
+- Take breaks when needed. 
+
+Your learning style
+- Jen: I learn well in small groups. Repetition in practicing what we learned on my own. Trial and error.
+- Selene: I easily understand template-like styles. Sometimes I need to review material a few times before being able to apply it. Sometimes the auditorium can be distracting if there's a lot of noise/fun happening.
+
+How you prefer to receive feedback
+- Selene: (ask culture) Explicit and detailed feedback with examples. Insinuated hints will go over my head D;
+- Jen: (guess culture) Let me know up front 
+
+One team communication skill you want to improve with this experience
+- If we have the time/energy, DRYing up code whence finished.
+- Explaining my code
+
+
 # Weather Report
 
 ## Skills Assessed

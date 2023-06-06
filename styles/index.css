@@ -1,0 +1,31 @@
+#temp-content__section {
+    padding: 20px;
+    width: 100px;
+    height: 100px;
+    color: grey;
+}
+
+#temp-counter__span {
+    font-size: 24px;
+    font-weight: bold;
+}
+/* 
+.item--teal {
+    background-color: teal;
+}
+
+.item--green {
+    background-color: green;
+}
+
+.item--yellow {
+    background-color: yellow;
+}
+
+.item--orange {
+    background-color: orange;
+}
+
+.item--red {
+    background-color: red;
+} */
