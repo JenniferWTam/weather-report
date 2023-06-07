@@ -5,7 +5,7 @@ const state = {
 }
 
 let temperature = document.getElementById("temp-counter__span");
-// let garden = document.getElementById("garden__span");
+let garden = document.getElementById("garden__span");
 
 // Function to set Temp Color and Background
 function setColor(value) {

@@ -14,7 +14,7 @@
     padding: 20px;
     width: 100px;
     height: 100px;
-    color: grey;
+    /* color: grey; */
 }
 
 #temp-counter__span {
@@ -53,4 +53,13 @@ body {
 
 section {
     display: block;
+}
+
+button {
+    border: none;
+    background-color: none;
+}
+
+select {
+    border-radius: 20px;
 }
