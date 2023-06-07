@@ -1,3 +1,15 @@
+
+#sky__section, #garden__section, #temp__section {
+    padding: 2rem;
+    background-color: #fff;
+    opacity: .8;
+    border-radius: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
 #temp-content__section {
     padding: 20px;
     width: 100px;
@@ -8,4 +20,37 @@
 #temp-counter__span {
     font-size: 24px;
     font-weight: bold;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto auto auto auto;
+    grid-gap: 1rem;
+    font-family: Rubik,sans-serif;
+    font-size: 18px;
+    margin: 2rem;
+}
+
+.header {
+    color: #fff;
+    grid-column: span 3;
+    display: flex;
+    align-items: center;
+    margin: 2rem auto 3rem 0;
+    font-family: 'IBM Plex Serif', serif;
+    text-align: center;
+}
+
+.header>h1 {
+    margin-right: 2rem;
+    font-size: 3em;
+}
+
+#sky__section {
+    grid-row: 3;
+}
+
+section {
+    display: block;
 }

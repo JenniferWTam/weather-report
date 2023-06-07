@@ -11,23 +11,23 @@ let temperature = document.getElementById("temp-counter__span");
 function setColor(value) {
     if (value >= 80) {
         temperature.style.color = "red";
-        document.body.style.backgroundImage = "url('https://m.media-amazon.com/images/I/61cDqZ-AplL._AC_SL1000_.jpg')";
-        temperature.style.backgroundColor = "teal";
+        document.body.style.backgroundImage = "url('/images/hot.gif')";
+        // temperature.style.backgroundColor = "teal";
     } else if (value >= 70 && value <= 79) {
         temperature.style.color = "orange";
-        document.body.style.backgroundImage = "url('https://m.media-amazon.com/images/I/51qp0bcf+TL._AC_.jpg')";
-        temperature.style.backgroundColor = "green";
+        document.body.style.backgroundImage = "url('/images/summer.gif')";
+        // temperature.style.backgroundColor = "green";
     } else if (value >= 60 && value <= 69) {
         temperature.style.color = "yellow";
-        document.body.style.backgroundImage = "url('https://m.media-amazon.com/images/I/61cDqZ-AplL._AC_SL1000_.jpg')";
-        temperature.style.backgroundColor = "yellow";
+        document.body.style.backgroundImage = "url('/images/warm.gif')";
+        // temperature.style.backgroundColor = "yellow";
     } else if (value >= 50 && value <= 59) {
         temperature.style.color = "green";
-        document.body.style.backgroundImage = "url('https://m.media-amazon.com/images/I/81VGfTBNSTL._AC_SL1500_.jpg')";
-        temperature.style.backgroundColor = "orange";
+        document.body.style.backgroundImage = "url('/images/spring.gif')";
+        // temperature.style.backgroundColor = "orange";
     } else {
         temperature.style.color = "teal"; 
-        document.body.style.backgroundImage = "url('https://m.media-amazon.com/images/I/71KyOfGjVeL._AC_SL1024_.jpg')";
+        document.body.style.backgroundImage = "url('/images/snow.gif')";
     }
 }
 
