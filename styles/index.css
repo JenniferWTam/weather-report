@@ -2,7 +2,7 @@
 #sky__section, #garden__section, #temp__section {
     padding: 2rem;
     background-color: #fff;
-    opacity: .8;
+    opacity: .7;
     border-radius: 20px;
     text-align: center;
     display: flex;
@@ -20,6 +20,13 @@
 #temp-counter__span {
     font-size: 24px;
     font-weight: bold;
+}
+
+#garden__section {
+grid-row: 2/span 4;
+grid-column: 2;
+text-align: center;
+align-self: center;
 }
 
 body {
