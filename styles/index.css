@@ -1,5 +1,5 @@
 
-#sky__section, #garden__section, #temp__section {
+#sky__section, #garden__section, #temp__section, #city__section {
     padding: 2rem;
     background-color: #fff;
     opacity: .7;
@@ -28,6 +28,13 @@ grid-column: 2;
 text-align: center;
 align-self: center;
 }
+
+#city__section {
+    grid-row: 3/span 4;
+    grid-column: 2;
+    text-align: center;
+    align-self: center;
+    }
 
 body {
     display: grid;
