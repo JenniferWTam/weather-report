@@ -6,7 +6,7 @@ const state = {
 
 let temperature = document.getElementById("temp-counter__span");
 
-// Function to set City and called getTemperature to change Temp with city input
+// Function to set City and call getTemperature to change temp with city input
 
     function saveCity() {
         var userInput = document.getElementById("cityInput").value;
