@@ -6,6 +6,37 @@ const state = {
 
 let temperature = document.getElementById("temp-counter__span");
 
+// Function to set sky
+const skyImg = { 
+    "0" : "☁️☁️ ☁️ ☁️☁️ ☁️ 🌤 ☁️ ☁️☁️",
+    "1": "☁️ ☁️ ☁️ ☀️ ☁️ ☁️",
+    "2" : "🌧🌈⛈🌧🌧💧⛈🌧🌦🌧💧🌧🌧",
+    "3" : "🌨❄️🌨🌨❄️❄️🌨❄️🌨❄️❄️🌨🌨"
+};
+
+const changeSky = () => {
+    const inputSky = document.getElementById('skySelect').value;
+    const skyContainer = document.getElementById('garden-content__section');
+    let sky = '';
+    let skyColor = '';
+    if (inputSky === 'Cloudy') {
+      sky = skyImg[0];
+      skyColor = 'cloudy';
+    } else if (inputSky === 'Sunny') {
+        sky = skyImg[1];
+      skyColor = 'sunny';
+    } else if (inputSky === 'Rainy') {
+        sky = skyImg[2];
+      skyColor = 'rainy';
+    } else if (inputSky === 'Snowy') {
+        sky = skyImg[3];
+      skyColor = 'snowy';
+    }
+    skyContainer.textContent = sky;
+    // const gardenContent = document.getElementById('gardenContent');
+    // gardenContent.classList = `garden__content ${skyColor}`;
+  };
+
 // Function to set City and call getTemperature to change temp with city input
 
     function saveCity() {
@@ -90,4 +121,6 @@ const registerEventHandlers = () => {
 document.getElementById("temp_add_button").addEventListener("click", increaseTemp);
 document.getElementById("temp_minus_button").addEventListener("click", decreaseTemp);
 };
+const skySelector = document.getElementById("skySelect");
+skySelector.addEventListener("change",changeSky);
 document.addEventListener("DOMContentLoaded", registerEventHandlers);
