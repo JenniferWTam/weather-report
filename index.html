@@ -14,38 +14,37 @@
 </head>
     <header class="header">
         <h1>Selene and Jen's Weather Site</h1>
-        <span>
-            Here's what it looks like in 
-        <span id="headerCityName" class="header__city-name">
-            ::before
-            "Seattle"
-            ::after
-        </span>
+            Here's what it looks like in
+            <p id="displayCity"></p>
     </header>
 <body>
+    <!-- TEMP SECTION -->
     <section id="temp__section">
         <h2>Temp</h2>
         <p id="temp-content__section">
             <span id="temp-counter__span"></span> temp!
         </p>
-        <button id="temp_add_button">⬆️</button>
-        <button id="temp_minus_button">⬇️</button>
+        <button id="temp_add_button">⬆</button>
+        <button id="temp_minus_button">⬇</button>
     </section>
+
+    <!-- CITY INPUT SECTION -->
     <section id="city__section">
         <h2>City</h2>
-        <p id="city-content__section">
-            <span id="city-counter__span"></span> city!
-        </p>
         <label for="cityInput">Enter city name:</label>
         <input type="text" id="cityInput" name="cityName">
+        <button onclick="saveCity()">Save</button>
     </section>
+
+    <!-- GARDEN SECTION -->
     <section id="garden__section">
         <h2>Garden</h2>
         <p id="garden-content__section">
             <span id="garden__span"></span> Garden!
-            <!-- <img src="https://m.media-amazon.com/images/I/71KyOfGjVeL._AC_SL1024_.jpg" alt="weather visual" width="200" height="150" class="image-thumbnail" title="Weather Image Title"> -->
         </p>
     </section>
+
+    <!-- SKY SECTION -->
     <section id="sky__section">
       <h2>Sky</h2>
       <select id="skySelect">

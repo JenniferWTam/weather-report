@@ -5,12 +5,49 @@ const state = {
 }
 
 let temperature = document.getElementById("temp-counter__span");
-let garden = document.getElementById("garden__span");
 
 // Function to set City
 
+    function saveCity() {
+        var userInput = document.getElementById("cityInput").value;
+        var displayElement = document.getElementById("displayCity");
+        displayElement.textContent = userInput;
+      }
+
+
+// Function to use LocationIQ and OpenWeather API
+
+// axios.get('http://127.0.0.1:5000/location').then( (response) => console.log(response))
+
+
+async function getTemperature(userInput) {
+    try {
+      // Get latitude and longitude of user input location
+      const locationResponse = await axios.get(`http://127.0.0.1:5000/location?q=${userInput}`);
+      const { lat, lon } = locationResponse.data[0];
+      
+      // Get weather data for latitude and longitude
+      const weatherResponse = await axios.get(`http://127.0.0.1:5000/weather?lat=${lat}&lon=${lon}`);
+      const { temp } = weatherResponse.data.main;
+      
+      // Convert temperature from Kelvin to Fahrenheit
+      const temperature = Math.floor((temp - 273.15) * 1.8 + 32);
+      
+      return temperature.toFixed(1); // Return temperature rounded to one decimal place
+    } catch (error) {
+      console.error(error);
+      return "Error getting temperature data";
+    }
+  }
+
+
+//   getTemperature("New York City").then((temperature) => {
+//     console.log(`The temperature in New York City is ${temperature} degrees Fahrenheit`);
+//   });
+
 
 // Function to set Temp Color and Background
+
 function setColor(value) {
     if (value >= 80) {
         temperature.style.color = "red";
@@ -53,11 +90,7 @@ const decreaseTemp = () => {
 
 // Register Event Handlers
 const registerEventHandlers = () => {
-
 document.getElementById("temp_add_button").addEventListener("click", increaseTemp);
-
 document.getElementById("temp_minus_button").addEventListener("click", decreaseTemp);
-
 };
-
 document.addEventListener("DOMContentLoaded", registerEventHandlers);
