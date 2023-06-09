@@ -1,7 +1,8 @@
 "use strict";
 
 const state = {
-    tempCount: 0,
+    tempCount: '0',
+    city: "Seattle"
 }
 
 let temperature = document.getElementById("temp-counter__span");
@@ -21,7 +22,7 @@ const changeSky = () => {
     let skyColor = '';
     if (inputSky === 'Cloudy') {
       sky = skyImg[0];
-      skyColor = 'cloudy';
+    //   skyColor = 'cloudy';
     } else if (inputSky === 'Sunny') {
         sky = skyImg[1];
       skyColor = 'sunny';
@@ -50,6 +51,19 @@ const changeSky = () => {
         });
     }
 
+
+    const resetCity = () => {
+        // Set city name back to default (Seattle) and update temperature
+        // state.city = "Seattle";
+        getTemperature(state.city).then((temp) => {
+        temperature.textContent = temp;
+        setColor(temp);
+        });
+        // Update display of city name
+        const displayElement = document.getElementById("displayCity");
+        displayElement.textContent = state.city;
+        };
+
 // Function to use LocationIQ and OpenWeather API
 
 
@@ -65,8 +79,9 @@ async function getTemperature(userInput) {
       
       // Convert temperature from Kelvin to Fahrenheit
       const temperature = (temp - 273.15) * 1.8 + 32;
-      
+      changeSky();
       return temperature.toFixed(1); // Return temperature rounded to one decimal place
+      
     } catch (error) {
       console.error(error);
       return "Error getting temperature data";
@@ -99,7 +114,6 @@ function setColor(value) {
     }
 }
 
-
 // Increment and Decrement Temp
 
 const increaseTemp = () => {
@@ -120,7 +134,8 @@ const decreaseTemp = () => {
 const registerEventHandlers = () => {
 document.getElementById("temp_add_button").addEventListener("click", increaseTemp);
 document.getElementById("temp_minus_button").addEventListener("click", decreaseTemp);
+document.getElementById("skySelect").addEventListener("change",changeSky);
+document.getElementById("resetButton").addEventListener("click", resetCity);
 };
-const skySelector = document.getElementById("skySelect");
-skySelector.addEventListener("change",changeSky);
+
 document.addEventListener("DOMContentLoaded", registerEventHandlers);

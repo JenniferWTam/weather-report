@@ -15,7 +15,7 @@
     <header class="header">
         <h1>Selene and Jen's Weather Site</h1>
             Here's what it looks like in
-            <p id="displayCity">Seattle</p>
+            <p id="displayCity"></p>
     </header>
 <body>
     <!-- TEMP SECTION -->
@@ -34,6 +34,7 @@
         <label for="cityInput">Enter city name:</label>
         <input type="text" id="cityInput" name="cityName">
         <button onclick="saveCity()">Save</button>
+        <button id="resetButton" onclick="resetCity()">Reset</button>
     </section>
 
     <!-- GARDEN SECTION -->
