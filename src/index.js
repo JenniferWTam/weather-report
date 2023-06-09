@@ -6,12 +6,8 @@ const state = {
 
 let temperature = document.getElementById("temp-counter__span");
 
-// Function to set City
+// Function to set City and called getTemperature to change Temp with city input
 
-    // function saveCity() {
-    //     var userInput = document.getElementById("cityInput").value;
-    //     var displayElement = document.getElementById("displayCity");
-    //     displayElement.textContent = userInput;
     function saveCity() {
         var userInput = document.getElementById("cityInput").value;
         var displayElement = document.getElementById("displayCity");
@@ -24,8 +20,6 @@ let temperature = document.getElementById("temp-counter__span");
     }
 
 // Function to use LocationIQ and OpenWeather API
-
-// axios.get('http://127.0.0.1:5000/location').then( (response) => console.log(response))
 
 
 async function getTemperature(userInput) {
@@ -47,11 +41,6 @@ async function getTemperature(userInput) {
       return "Error getting temperature data";
     }
   }
-
-
-  getTemperature("tempCount").then((temperature) => {
-    console.log(`The temperature in New York City is ${temperature} degrees Fahrenheit`);
-  });
 
 
 // Function to set Temp Color and Background
