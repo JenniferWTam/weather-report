@@ -8,12 +8,20 @@ let temperature = document.getElementById("temp-counter__span");
 
 // Function to set City
 
+    // function saveCity() {
+    //     var userInput = document.getElementById("cityInput").value;
+    //     var displayElement = document.getElementById("displayCity");
+    //     displayElement.textContent = userInput;
     function saveCity() {
         var userInput = document.getElementById("cityInput").value;
         var displayElement = document.getElementById("displayCity");
         displayElement.textContent = userInput;
-      }
-
+        // Call getTemperature function with user input and update temperature object
+        getTemperature(userInput).then((temp) => {
+            temperature.textContent = temp;
+            setColor(temp);
+        });
+    }
 
 // Function to use LocationIQ and OpenWeather API
 
@@ -31,7 +39,7 @@ async function getTemperature(userInput) {
       const { temp } = weatherResponse.data.main;
       
       // Convert temperature from Kelvin to Fahrenheit
-      const temperature = Math.floor((temp - 273.15) * 1.8 + 32);
+      const temperature = (temp - 273.15) * 1.8 + 32;
       
       return temperature.toFixed(1); // Return temperature rounded to one decimal place
     } catch (error) {
@@ -41,9 +49,9 @@ async function getTemperature(userInput) {
   }
 
 
-//   getTemperature("New York City").then((temperature) => {
-//     console.log(`The temperature in New York City is ${temperature} degrees Fahrenheit`);
-//   });
+  getTemperature("tempCount").then((temperature) => {
+    console.log(`The temperature in New York City is ${temperature} degrees Fahrenheit`);
+  });
 
 
 // Function to set Temp Color and Background
