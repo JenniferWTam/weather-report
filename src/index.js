@@ -1,8 +1,8 @@
 "use strict";
 
 const state = {
-    tempCount: '0',
-    city: "Seattle"
+    city: "Seattle",
+    tempCount: 0
 }
 
 let temperature = document.getElementById("temp-counter__span");
@@ -54,7 +54,7 @@ const changeSky = () => {
 
     const resetCity = () => {
         // Set city name back to default (Seattle) and update temperature
-        // state.city = "Seattle";
+        state.city = "Seattle";
         getTemperature(state.city).then((temp) => {
         temperature.textContent = temp;
         setColor(temp);
@@ -62,6 +62,8 @@ const changeSky = () => {
         // Update display of city name
         const displayElement = document.getElementById("displayCity");
         displayElement.textContent = state.city;
+        const displayInput = document.getElementById("cityInput");
+        displayInput.value = state.city;
         };
 
 // Function to use LocationIQ and OpenWeather API
@@ -87,7 +89,7 @@ async function getTemperature(userInput) {
       return "Error getting temperature data";
     }
   }
-
+  getTemperature(state.city);
 
 // Function to set Temp Color and Background
 
@@ -121,6 +123,7 @@ const increaseTemp = () => {
     const tempContainer = document.getElementById("temp-counter__span");
     tempContainer.textContent = `${state.tempCount}`;
     setColor(state.tempCount);
+    getTemperature(state.tempCount)
 };
 
 const decreaseTemp = () => {
@@ -136,6 +139,7 @@ document.getElementById("temp_add_button").addEventListener("click", increaseTem
 document.getElementById("temp_minus_button").addEventListener("click", decreaseTemp);
 document.getElementById("skySelect").addEventListener("change",changeSky);
 document.getElementById("resetButton").addEventListener("click", resetCity);
+resetCity();
 };
 
 document.addEventListener("DOMContentLoaded", registerEventHandlers);
