@@ -96,23 +96,23 @@ async function getTemperature(userInput) {
 function setColor(value) {
     if (value >= 80) {
         temperature.style.color = "red";
-        document.body.style.backgroundImage = "url('/images/hot.gif')";
+        document.body.style.backgroundImage = "url('./images/hot.gif')";
         // temperature.style.backgroundColor = "teal";
     } else if (value >= 70 && value <= 79) {
         temperature.style.color = "orange";
-        document.body.style.backgroundImage = "url('/images/summer.gif')";
+        document.body.style.backgroundImage = "url('./images/summer.gif')";
         // temperature.style.backgroundColor = "green";
     } else if (value >= 60 && value <= 69) {
         temperature.style.color = "yellow";
-        document.body.style.backgroundImage = "url('/images/warm.gif')";
+        document.body.style.backgroundImage = "url('./images/warm.gif')";
         // temperature.style.backgroundColor = "yellow";
     } else if (value >= 50 && value <= 59) {
         temperature.style.color = "green";
-        document.body.style.backgroundImage = "url('/images/spring.gif')";
+        document.body.style.backgroundImage = "url('./images/spring.gif')";
         // temperature.style.backgroundColor = "orange";
     } else {
         temperature.style.color = "teal"; 
-        document.body.style.backgroundImage = "url('/images/snow.gif')";
+        document.body.style.backgroundImage = "url('./images/snow.gif')";
     }
 }
 
