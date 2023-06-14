@@ -72,11 +72,11 @@ const changeSky = () => {
 async function getTemperature(userInput) {
     try {
       // Get latitude and longitude of user input location
-      const locationResponse = await axios.get(`http://127.0.0.1:5000/location?q=${userInput}`);
+      const locationResponse = await axios.get(`https://git.heroku.com/weather-report-proxy123.git/location?q=${userInput}`);
       const { lat, lon } = locationResponse.data[0];
       
       // Get weather data for latitude and longitude
-      const weatherResponse = await axios.get(`http://127.0.0.1:5000/weather?lat=${lat}&lon=${lon}`);
+      const weatherResponse = await axios.get(`https://git.heroku.com/weather-report-proxy123.git/weather?lat=${lat}&lon=${lon}`);
       const { temp } = weatherResponse.data.main;
       
       // Convert temperature from Kelvin to Fahrenheit
@@ -104,11 +104,11 @@ function setColor(value) {
         // temperature.style.backgroundColor = "green";
     } else if (value >= 60 && value <= 69) {
         temperature.style.color = "yellow";
-        document.body.style.backgroundImage = "url('./images/spring.gif')";
+        document.body.style.backgroundImage = "https://www.icegif.com/wp-content/uploads/2022/03/icegif-727.gif";
         // temperature.style.backgroundColor = "yellow";
     } else if (value >= 50 && value <= 59) {
         temperature.style.color = "green";
-        document.body.style.backgroundImage = "url('./images/spring.gif')";
+        document.body.style.backgroundImage = "https://www.icegif.com/wp-content/uploads/2022/03/icegif-727.gif";
         // temperature.style.backgroundColor = "orange";
     } else {
         temperature.style.color = "teal"; 
