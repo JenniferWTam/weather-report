@@ -104,7 +104,7 @@ function setColor(value) {
         // temperature.style.backgroundColor = "green";
     } else if (value >= 60 && value <= 69) {
         temperature.style.color = "yellow";
-        document.body.style.backgroundImage = "https://www.icegif.com/wp-content/uploads/2022/03/icegif-727.gif";
+        document.body.style.backgroundImage = "url('./images/spring.gif')";
         // temperature.style.backgroundColor = "yellow";
     } else if (value >= 50 && value <= 59) {
         temperature.style.color = "green";
