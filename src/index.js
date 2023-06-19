@@ -72,11 +72,11 @@ const changeSky = () => {
 async function getTemperature(userInput) {
     try {
       // Get latitude and longitude of user input location
-      const locationResponse = await axios.get(`https://weather-report-proxy123.herokuapp.com//location?q=${userInput}`);
+      const locationResponse = await axios.get(`https://web-production-17f6.up.railway.app/location?q=${userInput}`);
       const { lat, lon } = locationResponse.data[0];
       
       // Get weather data for latitude and longitude
-      const weatherResponse = await axios.get(`https://weather-report-proxy123.herokuapp.com//weather?lat=${lat}&lon=${lon}`);
+      const weatherResponse = await axios.get(`https://web-production-17f6.up.railway.app/weather?lat=${lat}&lon=${lon}`);
       const { temp } = weatherResponse.data.main;
       
       // Convert temperature from Kelvin to Fahrenheit
